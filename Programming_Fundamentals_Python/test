@@ -1,0 +1,32 @@
+def verifying_index(i, l_):
+    if i < 0 or (not 0 <= i < len(l_)):
+        print("Invalid index")
+    return 'ok'
+
+
+list_ = [int(x) for x in input().split()]
+
+command = input()
+while command != 'end':
+    command_args = command.split()
+    main_command = command_args[0]
+    if main_command == 'exchange':
+        index = int(command_args[1])
+        if verifying_index(index, list_):
+            list_part_second = list_[:index + 1]
+            list_part_one = list_[index + 1:]
+            list_ = list_part_one
+            list_.extend(list_part_second)
+    elif main_command == 'max':
+        subcommand = command_args[1]
+        if subcommand == 'even':
+            pass
+        else:
+            pass
+    elif main_command == 'min':
+        pass
+    elif main_command == 'first':
+        pass
+    elif main_command == 'last':
+        pass
+    command = input()
